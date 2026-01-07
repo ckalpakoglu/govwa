@@ -1,0 +1,10 @@
+on: [push]
+
+jobs:
+  security:
+    uses: ckalpakoglu/decsecops-workflows/.github/workflows/security.yaml@main
+    with:
+      host: https://appsecsanta.invicti.com
+      async_mode: true
+    secrets:
+      KONDUKTO_TOKEN: ${{ secrets.KONDUKTO_TOKEN }}
